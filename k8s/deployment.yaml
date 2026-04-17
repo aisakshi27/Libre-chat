@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: librechat
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: librechat
+  template:
+    metadata:
+      labels:
+        app: librechat
+    spec:
+      containers:
+        - name: librechat
+          image: 707333744663.dkr.ecr.us-east-1.amazonaws.com/librechat-us:latest
+          ports:
+            - containerPort: 3080
