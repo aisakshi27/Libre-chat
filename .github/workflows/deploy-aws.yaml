@@ -61,14 +61,16 @@ jobs:
           fi
 
           echo "📁 Setup project directory"
-          if [ ! -d "~/librechat" ]; then
-            git clone https://github.com/aisakshi27/Libre-chat.git ~/librechat
+
+          if [ ! -d "$HOME/librechat" ]; then
+            git clone https://github.com/aisakshi27/Libre-chat.git $HOME/librechat
+          else
+            echo "📂 Repo exists, pulling latest"
+            cd $HOME/librechat
+            git pull origin main
           fi
 
-          cd ~/librechat
-
-          echo "📥 Pull latest code"
-          git pull origin main
+          cd $HOME/librechat
 
           echo "🧹 Stop old containers"
           docker-compose down || true
