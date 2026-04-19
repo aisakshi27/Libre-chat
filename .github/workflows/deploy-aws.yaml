@@ -24,7 +24,7 @@ jobs:
         script: |
           # Clone repo if not exists
           if [ ! -d "librechat" ]; then
-            git clone git@github.com:aisakshi27/Libre-chat.git librechat
+            git clone https://github.com/aisakshi27/Libre-chat.git librechat
           fi
 
           cd librechat
